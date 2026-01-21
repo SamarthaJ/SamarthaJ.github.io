@@ -4,19 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-</head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9FN60H18GH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-9FN60H18GH');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9FN60H18GH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9FN60H18GH');
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 80px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
 <body>
     <h1>404: Error</h1>
     <h4>Under Construction</h4>
-</body>
 
+    <p>Times clicked: <span id="count">0</span></p>
+    <button id="clickBtn">Click here for no reason</button>
+
+    <script>
+        const countEl = document.getElementById("count");
+        const btn = document.getElementById("clickBtn");
+
+        // Load saved count
+        let clicks = localStorage.getItem("clickCount");
+        clicks = clicks ? parseInt(clicks) : 0;
+        countEl.textContent = clicks;
+
+        btn.addEventListener("click", () => {
+            clicks++;
+            countEl.textContent = clicks;
+            localStorage.setItem("clickCount", clicks);
+
+            // Optional: GA event tracking
+            gtag('event', 'button_click', {
+                event_category: 'engagement',
+                event_label: 'no_reason_button',
+                value: clicks
+            });
+        });
+    </script>
+</body>
 </html>
+
+
