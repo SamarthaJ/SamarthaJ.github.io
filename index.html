@@ -1,63 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9FN60H18GH"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-9FN60H18GH');
-    </script>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 80px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Market Notes</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <h1>404: Error</h1>
-    <h4>Under Construction</h4>
+<header><a href="index.html">Market Notes</a>
+<nav style="display:inline;margin-left:24px"><a href="news/index.html">News</a><a href="archive/index.html">Archive</a></nav></header>
+<main>
+<h1>Market Notes</h1>
+<p>Food commodity price updates for restaurant buyers.</p>
+<h2>Latest news (allowed)</h2>
+<ul>
+<li><a href="news/wheat-flour-prices.html">Wheat flour market update: November 2026</a></li>
+<li><a href="news/dairy-prices.html">Dairy (butter and cheese) market update: November 2026</a></li>
+<li><a href="news/poultry-prices.html">Poultry (chicken) market update: November 2026</a></li>
+<li><a href="news/cooking-oil-prices.html">Cooking oil market update: November 2026</a></li>
+<li><a href="news/coffee-prices.html">Coffee beans market update: November 2026</a></li>
+</ul>
+<h2>Archive (disallowed by robots.txt)</h2>
+<ul>
+<li><a href="archive/wheat-flour-prices.html">Wheat flour market update: March 2025</a></li>
+<li><a href="archive/dairy-prices.html">Dairy (butter and cheese) market update: April 2025</a></li>
+<li><a href="archive/poultry-prices.html">Poultry (chicken) market update: June 2025</a></li>
+<li><a href="archive/cooking-oil-prices.html">Cooking oil market update: February 2025</a></li>
+<li><a href="archive/coffee-prices.html">Coffee beans market update: May 2025</a></li>
+</ul>
 
-    <p>Times clicked: <span id="count">0</span></p>
-    <button id="clickBtn">Click here for no reason</button>
-
-    <script>
-        const countEl = document.getElementById("count");
-        const btn = document.getElementById("clickBtn");
-
-        // Load saved count
-        let clicks = localStorage.getItem("clickCount");
-        clicks = clicks ? parseInt(clicks) : 0;
-        countEl.textContent = clicks;
-
-        btn.addEventListener("click", () => {
-            clicks++;
-            countEl.textContent = clicks;
-            localStorage.setItem("clickCount", clicks);
-
-            // Optional: GA event tracking
-            gtag('event', 'button_click', {
-                event_category: 'engagement',
-                event_label: 'no_reason_button',
-                value: clicks
-            });
-        });
-    </script>
+</main>
+<footer>Test site for ShipFarmy AI Navi QA (TC-9, robots.txt partial disallow). Figures are illustrative test data, not real market prices.</footer>
 </body>
 </html>
-
-
